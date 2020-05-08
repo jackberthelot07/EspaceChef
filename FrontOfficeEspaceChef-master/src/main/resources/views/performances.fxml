@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.controllers.PerformancesController"
+      prefWidth="600"
+      prefHeight="300"
+      spacing="20">
+    <ComboBox fx:id="optionsProcedures"
+              prefWidth="200"/>
+    <Accordion expandedPane="$emp">
+        <panes>
+            <TitledPane text="Performances des employés" fx:id="emp">
+                <BarChart title="Nombres d'étapes traitées par employé">
+                    <xAxis>
+                        <CategoryAxis id="employesAxis"
+                                      side="BOTTOM" label="Employés"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis id="nbreEtapesAxis"
+                                    label="Nombre d'étapes traitées"
+                                    side="LEFT"/>
+                    </yAxis>
+                </BarChart>
+            </TitledPane>
+            <TitledPane text="Statistiques sur les procédures">
+                <VBox>
+                    <LineChart title="Nombre de procédures traitées par jour">
+                        <xAxis>
+                            <CategoryAxis id="jourAxis"
+                                          side="BOTTOM" label="Jours"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis id="nbreProcsAxis"
+                                        label="Nombre de procédures traitées"
+                                        side="LEFT"/>
+                        </yAxis>
+                    </LineChart>
+                    <HBox>
+                        <PieChart title="Proportions de demandes acceptées"
+                                  prefHeight="200" prefWidth="200"
+                                  HBox.hgrow="ALWAYS" />
+
+                        <PieChart title="Proportions de procédures traitées"
+                                  prefHeight="200" prefWidth="200" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                </VBox>
+            </TitledPane>
+        </panes>
+    </Accordion>
+</VBox>

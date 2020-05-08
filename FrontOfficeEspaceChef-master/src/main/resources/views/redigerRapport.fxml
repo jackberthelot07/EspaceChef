@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.controllers.RedigerRapportController"
+            prefWidth="400"
+            prefHeight="600">
+    <top>
+        <TitledPane prefWidth="300"
+                    text="Ajouter les documents à déposer">
+            <GridPane hgap="20" vgap="20">
+                <Label text="Numéro de demande"
+                       GridPane.rowIndex="0"
+                       GridPane.columnIndex="0">
+                    <font>
+                        <Font name="System Bold" size="16" />
+                    </font>
+                </Label>
+                <Label GridPane.rowIndex="0"
+                       GridPane.columnIndex="1">
+                    <font>
+                        <Font name="System Bold" size="16" />
+                    </font>
+                </Label>
+
+                <Label text="Décision"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="0">
+                    <font>
+                        <Font name="System Bold" size="16" />
+                    </font>
+                </Label>
+                <ComboBox prefWidth="200"
+                        GridPane.rowIndex="1"
+                       GridPane.columnIndex="1">
+                </ComboBox>
+
+                <Label text="Raison principale"
+                       GridPane.rowIndex="2"
+                       GridPane.columnIndex="0">
+                    <font>
+                        <Font name="System Bold" size="16" />
+                    </font>
+                </Label>
+                <TextField  fx:id="raisonPrinc"
+                            prefWidth="200"
+                          GridPane.rowIndex="2"
+                          GridPane.columnIndex="1">
+                </TextField>
+
+                <TextField  fx:id="details"
+                            prefHeight="300"
+                            prefWidth="400"
+                            promptText="Saisissez les détails"
+                           GridPane.rowIndex="3"
+                           GridPane.columnSpan="2">
+                </TextField>
+            </GridPane>
+        </TitledPane>
+    </top>
+
+    <bottom>
+        <VBox>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <Button prefWidth="100"
+                    onAction="#onGenerer"
+                    style="-fx-background-color:#009E0F"
+                    text="Générer" textFill="white"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>
